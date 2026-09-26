@@ -1,0 +1,151 @@
+/* Overlay */
+.modal-overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Modal Box */
+.modal-content2 {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+  animation: modalFade 0.25s ease;
+}
+
+/* Title */
+.modal-content2 h2 {
+  margin-bottom: 18px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form Layout */
+.modal-content2 form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs */
+.modal-content2 input,
+.modal-content2 select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  font-size: 14px;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+.modal-content2 input:focus,
+.modal-content2 select:focus {
+  outline: none;
+  border-color: #4a7dff;
+  box-shadow: 0 0 0 2px rgba(74,125,255,0.15);
+}
+
+/* Buttons */
+.button-group1 {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-group1 button {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Primary */
+.button-group1 button[type="submit"] {
+  background: #4a7dff;
+  color: white;
+}
+
+.button-group1 button[type="submit"]:hover {
+  background: #2f5fe0;
+}
+
+/* Cancel */
+.button-group1 button[type="button"] {
+  background: #000000;
+}
+
+.button-group1 button[type="button"]:hover {
+  background: #e61313;
+}
+
+/* Animation */
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- Responsive ---------------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .modal-content2 {
+    max-width: 90%;
+    padding: 22px 18px;
+  }
+
+  .modal-content2 h2 {
+    font-size: 20px;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  .modal-content2 {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    padding: 18px 14px;
+  }
+
+  .modal-content2 h2 {
+    font-size: 18px;
+  }
+
+  .modal-content2 input,
+  .modal-content2 select {
+    font-size: 13px;
+    padding: 9px;
+  }
+
+  .button-group1 {
+    flex-direction: column;
+  }
+
+}

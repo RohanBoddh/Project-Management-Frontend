@@ -1,0 +1,264 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* ========================= */
+/* ROOT FIX (IMPORTANT) */
+/* ========================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 🔥 MAIN FIX HERE */
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;   /* ✅ Navbar se start */
+  align-items: stretch;          /* ✅ full width */
+
+  overflow-x: hidden;
+}
+
+/* ========================= */
+/* BODY */
+/* ========================= */
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f6f9 0%, #e2e8f0 100%);
+  color: #374151;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ========================= */
+/* APP LAYOUT FIX */
+/* ========================= */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #3b82f6;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: 0.25s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* ========================= */
+/* IMAGES */
+/* ========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================= */
+/* LIST */
+/* ========================= */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ========================= */
+/* HEADINGS */
+/* ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1f2937;
+  word-wrap: break-word;
+}
+
+/* ========================= */
+/* TEXT */
+/* ========================= */
+
+p {
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+/* ========================= */
+/* INPUT */
+/* ========================= */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  max-width: 100%;
+}
+
+/* ========================= */
+/* FOCUS */
+/* ========================= */
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ========================= */
+/* FLEX UTILITIES */
+/* ========================= */
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ========================= */
+/* RESPONSIVE TYPOGRAPHY */
+/* ========================= */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.9rem;
+  }
+}

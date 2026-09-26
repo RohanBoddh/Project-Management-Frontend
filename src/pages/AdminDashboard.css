@@ -1,0 +1,293 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+/* GLOBAL FIX */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* WRAPPER */
+
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: rgb(122 122 122);
+  min-height: calc(100vh - 140px);
+  color: #000000;
+  position: relative;
+}
+
+/* MAIN */
+
+.main-content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* HEADER */
+
+.dashboard-header {
+  width: 100%;
+  position: relative; /* Important for AI button */
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dashboard-header h3 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-top: 10px;
+}
+
+/* CARD */
+
+.card {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px 40px;
+  background: rgb(231, 231, 231);
+  border-radius: 20px;
+  border: 1px solid #444;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card h4 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 15px;
+}
+
+/* NAVIGATION */
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card ul li {
+  flex: 1 1 180px;
+  max-width: 220px;
+  background: #e0fcff78;
+  padding: 25px 20px;
+  border-radius: 16px;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card ul li:hover {
+  transform: translateY(-6px);
+}
+
+.card ul li .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card ul li span {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* REQUESTS */
+
+.card > div:not(:first-child) {
+  background: #e0fcff78;
+  padding: 25px;
+  border-radius: 16px;
+  border: 2px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.card > div:not(:first-child) p {
+  margin: 8px 0;
+}
+
+.card > div:not(:first-child) hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 15px auto;
+  width: 50%;
+}
+
+/* BUTTONS */
+
+.btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+/* AI ASSISTANT */
+
+.ai-assistant {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.ai-btn {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+
+@media (max-width: 1024px) {
+
+  .dashboard-wrapper {
+    padding: 30px 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2.4rem;
+  }
+
+  .dashboard-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .dashboard-wrapper {
+    padding: 25px 16px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+
+  .card ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card ul li {
+    max-width: 100%;
+  }
+
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+  .dashboard-wrapper {
+    padding: 20px 12px;
+  }
+
+  .dashboard-header {
+    margin-bottom: 25px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .dashboard-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 18px 14px;
+  }
+
+  .card h4 {
+    font-size: 1.4rem;
+  }
+
+  .card ul li {
+    padding: 18px;
+  }
+
+  .ai-assistant {
+    padding-right: 10px;
+    transform: scale(0.9);
+  }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 360px) {
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .card h4 {
+    font-size: 1.2rem;
+  }
+
+}

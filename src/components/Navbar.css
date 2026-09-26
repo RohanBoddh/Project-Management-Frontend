@@ -1,0 +1,209 @@
+.nb-navbar {
+  width: 100%;
+  background: #1e293b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+}
+
+.nb-hamburger {
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.nb-hamburger span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nb-hamburger.nb-active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.nb-hamburger.nb-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nb-hamburger.nb-active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+.nb-links {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  background: white;
+  color: black;
+  list-style: none;
+  padding: 18px;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nb-links.nb-active {
+  display: flex;
+}
+
+.nb-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.nb-links a:hover {
+  color: #2563eb;
+}
+
+.nb-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nb-login-btn {
+  padding: 8px 16px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nb-login-btn:hover {
+  background: #1d4ed8;
+}
+
+.nb-profile {
+  position: relative;
+}
+
+.nb-profile-pic {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nb-default-pic {
+  color: white;
+  font-weight: bold;
+}
+
+.nb-dropdown {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 220px;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 14px;
+}
+
+.nb-dropdown-content p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.nb-customize-btn,
+.nb-logout-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nb-customize-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.nb-logout-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.nb-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-modal-content {
+  background: white;
+  color: black;
+  padding: 22px;
+  border-radius: 10px;
+  width: 320px;
+}
+
+.nb-button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.nb-button-group button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+}
+
+.nb-cancel-btn {
+  background: #64748b !important;
+  color: white;
+}
+
+.nb-error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+  .nb-navbar {
+    padding: 12px 16px;
+  }
+
+  .nb-links {
+    left: 10px;
+    top: 60px;
+  }
+}

@@ -1,0 +1,104 @@
+.send-container {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: auto;
+  min-height: calc(100vh - 70px);
+}
+
+.send-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.secondary {
+  background-color: #059669;
+}
+
+.secondary:hover {
+  background-color: #047857;
+}
+
+.send-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.send-form input[type="text"],
+.send-form textarea,
+.send-form select,
+.send-form input[type="file"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.send-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.send-form input:focus,
+.send-form textarea:focus,
+.send-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.submit-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .send-container {
+    padding: 30px 15px;
+  }
+
+  .send-title {
+    font-size: 24px;
+  }
+
+  .send-form input,
+  .send-form textarea,
+  .send-form select {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .send-container {
+    padding: 20px 12px;
+  }
+
+  .send-title {
+    font-size: 20px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 9px;
+  }
+}

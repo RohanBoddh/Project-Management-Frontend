@@ -1,0 +1,173 @@
+/* ===== PROFILE PAGE ===== */
+
+.profile-container1 {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f4f6f9;
+  padding: 40px 20px;
+}
+
+.dashboard-card1 {
+  background: #ffffff;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.dashboard-card1 h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Profile Photo */
+.profile-photo1 {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  cursor: pointer;
+}
+
+.profile-photo1 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4a90e2;
+}
+
+.default-photo1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #4a90e2;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text Info */
+.dashboard-card1 p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+/* ===== MODAL ===== */
+
+.modal-overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content1 {
+  background: #fff;
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content1 h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.photo-preview1 {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+}
+
+.photo-preview1 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.upload-btn1 {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.upload-btn1:hover {
+  background: #357abd;
+}
+
+.modal-content1 input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.button-group1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.button-group1 button {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #4a90e2;
+  color: white;
+}
+
+.button-group1 button:hover {
+  background: #357abd;
+}
+
+.cancel-btn1 {
+  background: #ccc !important;
+  color: #333 !important;
+}
+
+.cancel-btn1:hover {
+  background: #aaa !important;
+}
+
+.error1 {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.loading1 {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

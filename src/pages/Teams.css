@@ -1,0 +1,162 @@
+.teams-page {
+  padding: 30px;
+  min-height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  box-sizing: border-box;
+}
+
+.teams-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.teams-header h1 {
+  color: white;
+  margin: 0;
+  font-size: 28px;
+}
+
+.teams-add-btn {
+  background: #1a7bd6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  width: auto;
+  flex: none;
+  white-space: nowrap;
+}
+
+.teams-add-btn:hover {
+  background: #218838;
+}
+
+.teams-search {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.team-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 380px;
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+}
+
+.team-card h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: #222;
+}
+
+.team-desc-preview {
+  color: #555;
+  font-size: 14px;
+}
+
+.add-team-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.add-team-modal-box {
+  background: white;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+  .teams-page {
+    padding: 20px;
+  }
+
+  .teams-header h1 {
+    font-size: 24px;
+  }
+
+  .teams-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .teams-page {
+    padding: 15px;
+  }
+
+  .teams-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .teams-header h1 {
+    font-size: 22px;
+  }
+
+  .teams-add-btn {
+    align-self: flex-start;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .teams-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    max-width: 100%;
+  }
+
+  .teams-search {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .teams-header h1 {
+    font-size: 20px;
+  }
+
+  .team-card h3 {
+    font-size: 18px;
+  }
+}

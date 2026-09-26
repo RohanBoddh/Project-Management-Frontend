@@ -1,0 +1,178 @@
+/* Main Container */
+.allusers-container1 {
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* Card */
+.users-card1 {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.users-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.users-header1 h2 {
+  margin: 0;
+  color: black;
+}
+
+/* Add Button */
+.add-user-btn1 {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;  
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;   
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  width: auto;        
+  flex: none;
+}
+
+.add-user-btn1:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.add-user-btn1:active {
+  transform: translateY(0);
+}
+
+/* Table Wrapper */
+.table-wrapper1 {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table */
+.users-table1 {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+/* Table Head */
+.users-table1 thead {
+  background-color: #000000;
+}
+
+.users-table1 th {
+  padding: 14px 15px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+  white-space: nowrap;
+  color: #fff;
+}
+
+/* Table Body */
+.users-table1 td {
+  padding: 14px 15px;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  color: #333;
+}
+
+.users-table1 tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.users-table1 tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Edit Button */
+.edit-btn1 {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  margin-right: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  pointer-events: auto; /* ✅ Important */
+}
+
+.edit-btn1:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.edit-btn1:active {
+  transform: translateY(0);
+}
+
+/* Delete Button */
+.delete-btn1 {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  pointer-events: auto; /* ✅ Important */
+}
+
+.delete-btn1:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.delete-btn1:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .allusers-container1 {
+    padding: 20px;
+  }
+
+  .users-card1 {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .allusers-container1 {
+    padding: 15px;
+  }
+
+  .users-card1 {
+    padding: 15px;
+  }
+
+  .users-header1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-user-btn1 {
+    width: 100%;
+    text-align: center;
+  }
+}

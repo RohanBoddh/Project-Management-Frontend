@@ -1,0 +1,207 @@
+/* AssignManagers.css - Updated to display cards (sections) side by side */
+
+.assign-managers-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  display: flex;
+  flex-direction: row; /* Changed: Display sections side by side */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px; /* Added: Space between side-by-side cards */
+  position: relative;
+  overflow-x: hidden; /* Prevents horizontal shaking */
+  box-sizing: border-box;
+}
+
+.assign-managers-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.assign-managers-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+  width: 100%; /* Ensures title spans full width */
+}
+
+.assign-managers-container p {
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 1;
+  margin-bottom: 20px;
+  width: 100%; /* Ensures loading/error messages span full width */
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  width: calc(50% - 10px); /* Adjusted: Each card takes ~50% width minus gap for side-by-side */
+  min-width: 300px; /* Prevents too narrow on larger screens */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  animation: fadeInUp 1.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+}
+
+.section select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.section select:focus {
+  outline: none;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.section select option {
+  background: #333;
+  color: white;
+}
+
+.section button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  align-self: center;
+  min-width: 150px;
+}
+
+.section button:hover {
+  background: linear-gradient(135deg, #764ba2, #f093fb);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.section button:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .assign-managers-container {
+    flex-direction: column; /* Changed: Stack cards vertically on tablets and below */
+    padding: 15px;
+    min-height: auto;
+    gap: 15px;
+  }
+
+  .assign-managers-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .assign-managers-container p {
+    font-size: 1rem;
+  }
+
+  .section {
+    width: 95%; /* Full width when stacked */
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .section h3 {
+    font-size: 1.5rem;
+  }
+
+  .section select {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .section button {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    min-width: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .assign-managers-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .assign-managers-container p {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    width: 100%;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .section h3 {
+    font-size: 1.3rem;
+  }
+
+  .section select {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .section button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+}

@@ -1,0 +1,248 @@
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #111827 0%, #1f2937 50%, #374151 100%);
+  height: 100vh;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 900;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease, width 0.3s ease;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar h2 {
+  color: #f9fafb;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  color: #d1d5db;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, padding-left 0.3s ease;
+  border-radius: 8px;
+  margin: 5px 10px;
+  position: relative;
+}
+
+.sidebar a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #2563eb;
+  border-radius: 0 4px 4px 0;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.sidebar a:hover {
+  background: rgba(31, 41, 55, 0.8);
+  color: #f9fafb;
+  transform: translateX(5px);
+  padding-left: 25px;
+}
+
+.sidebar a:hover::before {
+  transform: scaleY(1);
+}
+
+.sidebar a.active {
+  background: linear-gradient(145deg, #2563eb, #1d4ed8);
+  color: #f9fafb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.sidebar a.active::before {
+  transform: scaleY(1);
+}
+
+.sidebar a:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.sidebar .icon {
+  font-size: 1.2rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.sidebar.collapsed a {
+  justify-content: center;
+  padding: 15px 10px;
+}
+
+.sidebar.collapsed a span:not(.icon) {
+  display: none;
+}
+
+.sidebar.collapsed .icon {
+  font-size: 1.5rem;
+}
+
+/* Toggle Button */
+.sidebar-toggle {
+  position: absolute;
+  top: 10px;
+  right: -15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background: #1d4ed8;
+}
+
+/* ================= RESPONSIVE FIX ONLY ================= */
+
+/* Tablet & Mobile */
+@media screen and (max-width: 768px) {
+
+  .sidebar {
+    transform: translateX(-100%);
+    width: 250px;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Overlay effect when open (optional but clean UX) */
+  .sidebar.open::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 250px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .sidebar-toggle {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    right: auto;
+    z-index: 1100;
+  }
+
+  .sidebar h2 {
+    font-size: 1.3rem;
+  }
+
+  .sidebar a {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+}
+
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .sidebar.open::after {
+    left: 220px;
+  }
+
+  .sidebar a {
+    font-size: 0.95rem;
+    padding: 10px 14px;
+  }
+
+  .sidebar h2 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+  }
+}
+
+
+/* Desktop */
+@media screen and (min-width: 769px) {
+
+  .sidebar {
+    transform: translateX(0);
+    position: fixed;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+
+/* Large Screens */
+@media screen and (min-width: 1024px) {
+
+  .sidebar {
+    width: 280px;
+  }
+
+  .sidebar.collapsed {
+    width: 80px;
+  }
+
+  .sidebar a {
+    font-size: 1.1rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.6rem;
+  }
+}
