@@ -20,21 +20,23 @@ function AdminDashboard() {
   const synthRef = useRef(window.speechSynthesis);
   const [isAddUserOpen, setIsAddUserOpen] = useState(false);
   const [isAddProjectOpen, setIsAddProjectOpen] = useState(false);
-const openAddUser = () => {
-  setIsAddUserOpen(true);
-};
 
-const openAddProject = () => {
-  setIsAddProjectOpen(true);
-};
+  const openAddUser = () => {
+    setIsAddUserOpen(true);
+  };
 
-const closeAddUser = () => {
-  setIsAddUserOpen(false);
-};
+  const openAddProject = () => {
+    setIsAddProjectOpen(true);
+  };
 
-const closeAddProject = () => {
-  setIsAddProjectOpen(false);
-};
+  const closeAddUser = () => {
+    setIsAddUserOpen(false);
+  };
+
+  const closeAddProject = () => {
+    setIsAddProjectOpen(false);
+  };
+
   // AI Voice Assistant Functions
   const startListening = () => {
     if (
@@ -321,7 +323,7 @@ const closeAddProject = () => {
         if (!token) return;
 
         const { data } = await axios.get(
-          "http://localhost:5000/api/projects/requests",
+          "https://project-management-backend-alpha.vercel.app/api/projects/requests",
           {
             headers: { Authorization: `Bearer ${token}` },
           },
@@ -342,7 +344,7 @@ const closeAddProject = () => {
       if (!token) return;
 
       await axios.put(
-        `http://localhost:5000/api/projects/request/${id}`,
+        `https://project-management-backend-alpha.vercel.app/api/projects/request/${id}`,
         { status },
         {
           headers: { Authorization: `Bearer ${token}` },

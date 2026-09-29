@@ -10,7 +10,7 @@ function ProjectRequests() {
   const [selectedRequest, setSelectedRequest] = useState(null);
 
   const containerRef = useRef(null);
-  const isMounted = useRef(true); 
+  const isMounted = useRef(true);
 
   useEffect(() => {
     fetchRequests();
@@ -43,7 +43,7 @@ function ProjectRequests() {
       }
 
       const { data } = await axios.get(
-        "http://localhost:5000/api/projects/requests",
+        "https://project-management-backend-alpha.vercel.app/api/projects/requests",
         {
           headers: { Authorization: `Bearer ${token}` },
           params: { t: Date.now() },
@@ -64,7 +64,7 @@ function ProjectRequests() {
       if (!token) return;
 
       await axios.put(
-        `http://localhost:5000/api/projects/request/${id}`,
+        `https://project-management-backend-alpha.vercel.app/api/projects/request/${id}`,
         { status },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -91,7 +91,7 @@ function ProjectRequests() {
       if (!token) return;
 
       await axios.delete(
-        `http://localhost:5000/api/projects/request/${id}`,
+        `https://project-management-backend-alpha.vercel.app/api/projects/request/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -170,9 +170,8 @@ function ProjectRequests() {
           {requests.map((req) => (
             <div
               key={req._id}
-              className={`request-card1 ${
-                selectedRequest?._id === req._id ? "selected" : ""
-              }`}
+              className={`request-card1 ${selectedRequest?._id === req._id ? "selected" : ""
+                }`}
               onClick={() => toggleRequest(req)}
             >
               <div className="card-header1">

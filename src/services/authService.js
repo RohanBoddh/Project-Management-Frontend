@@ -1,17 +1,16 @@
-import axios from "axios";
+import API from "./api";
 
-const API = "http://localhost:5000/api/auth";
+// ================= REGISTER =================
+export const registerUser = (data) => {
+  return API.post("/auth/register", data);
+};
 
-// REGISTER
-export const registerUser = (data) => axios.post(`${API}/register`, data);
+// ================= LOGIN =================
+export const loginUser = (data) => {
+  return API.post("/auth/login", data);
+};
 
-// LOGIN
-export const loginUser = (data) => axios.post(`${API}/login`, data);
-
-export const getMe = () =>
-  axios.get(`${API}/me`, {
-    headers: {
-      // FIX: Changed sessionStorage to sessionStorage
-      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-    },
-  });
+// ================= GET CURRENT USER =================
+export const getMe = () => {
+  return API.get("/auth/me");
+};

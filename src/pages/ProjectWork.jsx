@@ -14,7 +14,7 @@ function ProjectWork() {
       setLoading(true);
 
       const res = await fetch(
-        `http://localhost:5000/api/work/project/${id}`,
+        `https://project-management-backend-alpha.vercel.app/api/work/project/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -53,7 +53,7 @@ function ProjectWork() {
                 <img
                   src={
                     work.sender?.profileImage
-                      ? `http://localhost:5000/${work.sender.profileImage}`
+                      ? `https://project-management-backend-alpha.vercel.app/${work.sender.profileImage}`
                       : "/default-avatar.png"
                   }
                   alt="sender"
@@ -68,7 +68,7 @@ function ProjectWork() {
                 <img
                   src={
                     work.receiver?.profileImage
-                      ? `http://localhost:5000/${work.receiver.profileImage}`
+                      ? `https://project-management-backend-alpha.vercel.app/${work.receiver.profileImage}`
                       : "/default-avatar.png"
                   }
                   alt="receiver"
@@ -88,7 +88,7 @@ function ProjectWork() {
                 {work.files.map((file, index) => (
                   <div key={index}>
                     <a
-                      href={`http://localhost:5000/${file.path}`}
+                      href={`https://project-management-backend-alpha.vercel.app/${file.path}`}
                       target="_blank"
                       rel="noreferrer"
                     >

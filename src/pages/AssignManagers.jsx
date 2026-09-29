@@ -27,7 +27,7 @@ const AssignManagers = () => {
       }
 
       // Fetch users
-      const userRes = await fetch("http://localhost:5000/api/users", {
+      const userRes = await fetch("https://project-management-backend-alpha.vercel.app/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!userRes.ok) throw new Error("Failed to fetch users");
@@ -35,7 +35,7 @@ const AssignManagers = () => {
       setUsers(usersData);
 
       // Fetch projects
-      const projectRes = await fetch("http://localhost:5000/api/projects", {
+      const projectRes = await fetch("https://project-management-backend-alpha.vercel.app/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!projectRes.ok) throw new Error("Failed to fetch projects");
@@ -53,7 +53,7 @@ const AssignManagers = () => {
 
     try {
       const token = sessionStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/users/${selectedUser}`, {
+      const res = await fetch(`https://project-management-backend-alpha.vercel.app/api/users/${selectedUser}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const AssignManagers = () => {
 
     try {
       const token = sessionStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/projects/${selectedProject}`, {
+      const res = await fetch(`https://project-management-backend-alpha.vercel.app/api/projects/${selectedProject}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

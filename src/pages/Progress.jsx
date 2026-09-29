@@ -18,7 +18,7 @@ function Progress() {
 
   const fetchProjects = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/projects", {
+      const { data } = await axios.get("https://project-management-backend-alpha.vercel.app/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(data);
@@ -99,20 +99,20 @@ function Progress() {
             <div key={project._id} className="progress-card">
               <div className="progress-card-header">
                 <h3>{project.name}</h3>
-                <span 
-                  className="status-badge" 
+                <span
+                  className="status-badge"
                   style={{ backgroundColor: getStatusColor(project) }}
                 >
                   {getStatus(project)}
                 </span>
               </div>
-              
+
               <p className="project-description">{project.description}</p>
-              
+
               <div className="progress-bar-container">
                 <div className="progress-bar">
-                  <div 
-                    className="progress-fill" 
+                  <div
+                    className="progress-fill"
                     style={{ width: `${getProgressPercentage(project)}%` }}
                   ></div>
                 </div>
@@ -120,7 +120,7 @@ function Progress() {
                   {getProgressPercentage(project)}%
                 </span>
               </div>
-              
+
               <div className="progress-details">
                 <div className="detail-item">
                   <span className="detail-label">Team Members:</span>

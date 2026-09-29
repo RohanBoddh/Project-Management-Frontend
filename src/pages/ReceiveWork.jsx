@@ -8,7 +8,7 @@ function ReceiveWork() {
   const fetchWorks = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/work/received",
+        "https://project-management-backend-alpha.vercel.app/api/work/received",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

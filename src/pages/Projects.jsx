@@ -47,7 +47,7 @@ function Projects() {
   // Fetch projects
   const fetchProjects = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/projects", {
+      const { data } = await axios.get("https://project-management-backend-alpha.vercel.app/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(data);
@@ -63,7 +63,7 @@ function Projects() {
     if (!isAdmin && !isManager) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/users", {
+      const res = await fetch("https://project-management-backend-alpha.vercel.app/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -135,7 +135,7 @@ function Projects() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/projects/request",
+        "https://project-management-backend-alpha.vercel.app/api/projects/request",
         requestForm,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -199,7 +199,7 @@ function Projects() {
   // Delete project
   const handleDeleteProject = async (projectId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${projectId}`, {
+      await axios.delete(`https://project-management-backend-alpha.vercel.app/api/projects/${projectId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(projects.filter((p) => p._id !== projectId));
@@ -319,7 +319,7 @@ function Projects() {
     }
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/projects/${expandedProjectId}`,
+        `https://project-management-backend-alpha.vercel.app/api/projects/${expandedProjectId}`,
         expandedForm,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -343,11 +343,11 @@ function Projects() {
 
         return user && user.role === "member"
           ? {
-              name: user.name,
-              email: user.email,
-              department: user.department,
-              role: user.role,
-            }
+            name: user.name,
+            email: user.email,
+            department: user.department,
+            role: user.role,
+          }
           : null;
       })
       .filter(Boolean);
@@ -633,53 +633,53 @@ function Projects() {
 
                   <div className="project-actions">
 
-  {/* RECEIVE WORK */}
-  <button
-    className="work-btn"
-    onClick={(e) => {
-      e.stopPropagation();
-      navigate(`/project-work/${project._id}`);
-    }}
-  >
-    Receive Work
-  </button>
+                    {/* RECEIVE WORK */}
+                    <button
+                      className="work-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/project-work/${project._id}`);
+                      }}
+                    >
+                      Receive Work
+                    </button>
 
-  {/* SEND WORK */}
-  <button
-    className="send-work-btn"
-    onClick={(e) => {
-      e.stopPropagation();
-      navigate(`/send-work/${project._id}`);
-    }}
-  >
-    Send Work
-  </button>
+                    {/* SEND WORK */}
+                    <button
+                      className="send-work-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/send-work/${project._id}`);
+                      }}
+                    >
+                      Send Work
+                    </button>
 
-  {/* ADMIN ONLY */}
-  {isAdmin && (
-    <>
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          handleCardClick(project);
-        }}
-        className="edit-btn-project"
-      >
-        Edit
-      </button>
+                    {/* ADMIN ONLY */}
+                    {isAdmin && (
+                      <>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleCardClick(project);
+                          }}
+                          className="edit-btn-project"
+                        >
+                          Edit
+                        </button>
 
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          handleDeleteProject(project._id);
-        }}
-        className="delete-btn"
-      >
-        Delete
-      </button>
-    </>
-  )}
-</div>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleDeleteProject(project._id);
+                          }}
+                          className="delete-btn"
+                        >
+                          Delete
+                        </button>
+                      </>
+                    )}
+                  </div>
                 </>
               )}
             </div>

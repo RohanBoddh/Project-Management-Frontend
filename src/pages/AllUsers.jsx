@@ -18,9 +18,12 @@ function AllUsers() {
   const fetchUsers = async () => {
     try {
       const token = sessionStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/users", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        "https://project-management-backend-alpha.vercel.app/api/users",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setUsers(res.data);
     } catch (error) {
       console.error(error);
@@ -33,7 +36,7 @@ function AllUsers() {
     try {
       const token = sessionStorage.getItem("token");
       const res = await axios.get(
-        `http://localhost:5000/api/users/${id}`,
+        `https://project-management-backend-alpha.vercel.app/api/users/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setEditingUser(res.data);
@@ -48,7 +51,7 @@ function AllUsers() {
     try {
       const token = sessionStorage.getItem("token");
       await axios.delete(
-        `http://localhost:5000/api/users/${id}`,
+        `https://project-management-backend-alpha.vercel.app/api/users/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       fetchUsers();

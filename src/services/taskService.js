@@ -1,17 +1,18 @@
-// src/services/taskService.js
 import axios from "axios";
 
 // Create axios instance with base URL and default headers
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://project-management-backend-alpha.vercel.app/api",
 });
 
 // Add token to requests if available
 API.interceptors.request.use((req) => {
   const token = sessionStorage.getItem("token");
+
   if (token) {
     req.headers.Authorization = `Bearer ${token}`;
   }
+
   return req;
 });
 
@@ -105,7 +106,6 @@ export const getAllTasks = async () => {
   }
 };
 
-// Export all functions as an object
 export default {
   getMyTasks,
   getTasksByProject,

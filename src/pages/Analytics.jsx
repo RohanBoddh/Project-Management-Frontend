@@ -27,14 +27,14 @@ const Analytics = () => {
 
     try {
       const token = sessionStorage.getItem("token");
-      
+
       if (!token) {
         setError("No token found. Please log in.");
         setLoading(false);
         return;
       }
 
-      const res = await fetch("http://localhost:5000/api/analytics", {
+      const res = await fetch("https://project-management-backend-alpha.vercel.app/api/analytics", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -73,16 +73,16 @@ const Analytics = () => {
   return (
     <div className="analytics-container">
       <h1>System Analytics</h1>
-      
+
       {loading && (
         <div className="loading-container">
           <div className="spinner"></div>
           <p>Loading analytics...</p>
         </div>
       )}
-      
+
       {error && <p className="error-message">{error}</p>}
-      
+
       {analyticsData && !loading && (
         <div className="analytics-content">
           {/* ROW 1: 3 Stats Cards */}
@@ -94,7 +94,7 @@ const Analytics = () => {
               <h3>Total Users</h3>
               <p>{analyticsData.totalUsers}</p>
             </div>
-            
+
             <div className="stat-card">
               <div className="icon-wrapper">
                 <i className="fas fa-folder-open"></i>
@@ -102,7 +102,7 @@ const Analytics = () => {
               <h3>Total Projects</h3>
               <p>{analyticsData.totalProjects}</p>
             </div>
-            
+
             <div className="stat-card">
               <div className="icon-wrapper">
                 <i className="fas fa-tasks"></i>
@@ -122,9 +122,9 @@ const Analytics = () => {
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
                   <XAxis dataKey="name" stroke="#a0a0a0" />
                   <YAxis stroke="#a0a0a0" />
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: '#1e2a4a', 
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: '#1e2a4a',
                       border: '1px solid #667eea',
                       borderRadius: '10px',
                       color: '#fff'
@@ -162,9 +162,9 @@ const Analytics = () => {
                       <Cell key={`cell-${index}`} fill={entry.color} />
                     ))}
                   </Pie>
-                  <Tooltip 
-                    contentStyle={{ 
-                      backgroundColor: '#1e2a4a', 
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: '#1e2a4a',
                       border: '1px solid #667eea',
                       borderRadius: '10px',
                       color: '#fff'

@@ -40,7 +40,7 @@ function Navbar() {
       form.append("photo", photo);
 
       const res = await fetch(
-        "http://localhost:5000/api/users/updateProfile",
+        "https://project-management-backend-alpha.vercel.app/api/users/updateProfile",
         {
           method: "PUT",
           headers: {
@@ -84,10 +84,10 @@ function Navbar() {
 
   // 🔥 IMAGE URL FIX
   const profileImageUrl = user?.photo
-  ? user.photo.startsWith("uploads/")
-    ? `http://localhost:5000/${user.photo}?t=${user.updatedAt}`
-    : `http://localhost:5000/uploads/${user.photo}?t=${user.updatedAt}`
-  : null;
+    ? user.photo.startsWith("uploads/")
+      ? `https://project-management-backend-alpha.vercel.app/${user.photo}?t=${user.updatedAt}`
+      : `https://project-management-backend-alpha.vercel.app/uploads/${user.photo}?t=${user.updatedAt}`
+    : null;
 
   return (
     <nav className="nb-navbar">

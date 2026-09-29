@@ -115,7 +115,7 @@ function Profile() {
         >
           {profileData.photo ? (
             <img
-              src={`http://localhost:5000/uploads/${profileData.photo}`}
+              src={`https://project-management-backend-alpha.vercel.app/uploads/${profileData.photo}`}
               alt="Profile"
             />
           ) : (
@@ -144,7 +144,7 @@ function Profile() {
                 <img src={preview} alt="Preview" />
               ) : profileData.photo ? (
                 <img
-                  src={`http://localhost:5000/${profileData.photo}`}
+                  src={`https://project-management-backend-alpha.vercel.app/${profileData.photo}`}
                   alt="Profile"
                 />
               ) : (

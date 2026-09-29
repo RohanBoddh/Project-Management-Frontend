@@ -1,13 +1,12 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://project-management-backend-alpha.vercel.app/api",
   withCredentials: true,
 });
 
-// Attach token automatically
 API.interceptors.request.use((req) => {
-  const token = sessionStorage.getItem("token"); // ✅ FIXED
+  const token = sessionStorage.getItem("token");
 
   if (token) {
     req.headers.Authorization = `Bearer ${token}`;

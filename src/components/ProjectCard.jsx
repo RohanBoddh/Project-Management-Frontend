@@ -21,9 +21,12 @@ function ProjectCard({ project, projects, setProjects, onEdit, onDelete }) {
   const fetchManagerName = async (managerId) => {
     try {
       const token = sessionStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/users/${managerId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await fetch(
+        `https://project-management-backend-alpha.vercel.app/api/users/${managerId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       if (res.ok) {
         const user = await res.json();
         setManagerName(user.name);
@@ -36,9 +39,12 @@ function ProjectCard({ project, projects, setProjects, onEdit, onDelete }) {
   const fetchUsers = async () => {
     try {
       const token = sessionStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/users", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await fetch(
+        "https://project-management-backend-alpha.vercel.app/api/users",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       const data = await res.json();
       setUsers(data);
     } catch (err) {
@@ -64,11 +70,11 @@ function ProjectCard({ project, projects, setProjects, onEdit, onDelete }) {
 
         return user
           ? {
-              name: user.name,
-              email: user.email,
-              department: user.department,
-              role: user.role,
-            }
+            name: user.name,
+            email: user.email,
+            department: user.department,
+            role: user.role,
+          }
           : null;
       })
       .filter(Boolean);

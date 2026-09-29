@@ -31,7 +31,7 @@ const MyTasks = () => {
   const fetchProjects = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/member/assigned-projects",
+        "https://project-management-backend-alpha.vercel.app/api/member/assigned-projects",
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -151,7 +151,7 @@ const MyTasks = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/member/upload-work",
+        "https://project-management-backend-alpha.vercel.app/api/member/upload-work",
         formData,
         {
           headers: {

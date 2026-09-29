@@ -35,9 +35,9 @@ function Home() {
     const fetchAnalytics = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        
-        const response = await fetch("http://localhost:5000/api/analytics", {
-          headers: { 
+
+        const response = await fetch("https://project-management-backend-alpha.vercel.app/api/analytics", {
+          headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json"
           },
@@ -67,7 +67,7 @@ function Home() {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/testimonials");
+        const response = await fetch("https://project-management-backend-alpha.vercel.app/api/testimonials");
 
         if (!response.ok) {
           throw new Error("Failed to fetch testimonials");

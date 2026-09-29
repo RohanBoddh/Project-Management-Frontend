@@ -42,7 +42,7 @@ const EditUserModal = ({ isOpen, onClose, user, onUserUpdated }) => {
       const token = sessionStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:5000/api/users/${user._id}`,
+        `https://project-management-backend-alpha.vercel.app/api/users/${user._id}`,
         {
           method: "PUT",
           headers: {
@@ -87,7 +87,11 @@ const EditUserModal = ({ isOpen, onClose, user, onUserUpdated }) => {
           <option value="member">Member</option>
         </select>
 
-        <input name="department" value={formData.department} onChange={handleChange} />
+        <input
+          name="department"
+          value={formData.department}
+          onChange={handleChange}
+        />
 
         <div className="edit-button-group">
           <button onClick={handleSubmit}>Update</button>

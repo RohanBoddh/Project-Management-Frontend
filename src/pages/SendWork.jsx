@@ -42,7 +42,7 @@ function SendWork() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/work", {
+      const res = await fetch("https://project-management-backend-alpha.vercel.app/api/work", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

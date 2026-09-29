@@ -19,9 +19,9 @@ const Notifications = () => {
     try {
       setLoading(true);
       setError(null);
-      
+
       const token = sessionStorage.getItem("token");
-      
+
       if (!token) {
         setError("Please login to view notifications");
         setLoading(false);
@@ -29,8 +29,8 @@ const Notifications = () => {
       }
 
       console.log("Fetching notifications...");
-      
-      const response = await fetch("http://localhost:5000/api/notifications", {
+
+      const response = await fetch("https://project-management-backend-alpha.vercel.app/api/notifications", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -66,16 +66,16 @@ const Notifications = () => {
   const markAsRead = async (notificationId) => {
     try {
       const token = sessionStorage.getItem("token");
-      
-      await fetch(`http://localhost:5000/api/notifications/${notificationId}/read`, {
+
+      await fetch(`https://project-management-backend-alpha.vercel.app/api/notifications/${notificationId}/read`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      
+
       // Update local state
-      setNotifications(notifications.map(n => 
+      setNotifications(notifications.map(n =>
         n._id === notificationId ? { ...n, isRead: true } : n
       ));
     } catch (err) {
@@ -86,14 +86,14 @@ const Notifications = () => {
   const markAllAsRead = async () => {
     try {
       const token = sessionStorage.getItem("token");
-      
-      await fetch("http://localhost:5000/api/notifications/mark-all-read", {
+
+      await fetch("https://project-management-backend-alpha.vercel.app/api/notifications/mark-all-read", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      
+
       // Update all to read
       setNotifications(notifications.map(n => ({ ...n, isRead: true })));
     } catch (err) {
@@ -104,14 +104,14 @@ const Notifications = () => {
   const deleteNotification = async (notificationId) => {
     try {
       const token = sessionStorage.getItem("token");
-      
-      await fetch(`http://localhost:5000/api/notifications/${notificationId}`, {
+
+      await fetch(`https://project-management-backend-alpha.vercel.app/api/notifications/${notificationId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      
+
       // Remove from local state
       setNotifications(notifications.filter(n => n._id !== notificationId));
     } catch (err) {
@@ -132,7 +132,7 @@ const Notifications = () => {
 
   const getTimeAgo = (dateString) => {
     if (!dateString) return "";
-    
+
     const date = new Date(dateString);
     const now = new Date();
     const diffMs = now - date;
@@ -193,8 +193,8 @@ const Notifications = () => {
       ) : (
         <div className="notifications-list">
           {notifications.map((notification) => (
-            <div 
-              key={notification._id} 
+            <div
+              key={notification._id}
               className={`notification-item ${!notification.isRead ? "unread" : ""}`}
             >
               {/* Icon */}
@@ -213,10 +213,10 @@ const Notifications = () => {
                 <p className="notification-message">
                   {notification.message || notification.text || "No message"}
                 </p>
-                
+
                 {/* Action Button if available */}
                 {notification.actionUrl && (
-                  <button 
+                  <button
                     className="notification-action"
                     onClick={() => navigate(notification.actionUrl)}
                   >
@@ -228,7 +228,7 @@ const Notifications = () => {
               {/* Actions */}
               <div className="notification-actions">
                 {!notification.isRead && (
-                  <button 
+                  <button
                     className="action-btn mark-read"
                     onClick={() => markAsRead(notification._id)}
                     title="Mark as read"
@@ -236,7 +236,7 @@ const Notifications = () => {
                     ✓
                   </button>
                 )}
-                <button 
+                <button
                   className="action-btn delete"
                   onClick={() => deleteNotification(notification._id)}
                   title="Delete"
@@ -255,7 +255,7 @@ const Notifications = () => {
       {/* Quick Actions */}
       {notifications.length > 0 && (
         <div className="notifications-footer">
-          <button 
+          <button
             className="clear-all"
             onClick={() => setNotifications([])}
           >

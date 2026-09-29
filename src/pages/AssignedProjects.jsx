@@ -29,7 +29,7 @@ function AssignedProjects() {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/api/member/assigned-projects", {
+      const response = await fetch("https://project-management-backend-alpha.vercel.app/api/member/assigned-projects", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
